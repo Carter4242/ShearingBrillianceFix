@@ -25,6 +25,25 @@
         </dependency>
     </dependencies>
 
+    <repositories>
+        <repository>
+            <id>spigot-snapshots</id>
+            <name>Spigot Snapshots</name>
+            <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>papermc</id>
+            <name>PaperMC Repository</name>
+            <url>https://repo.papermc.io/repository/maven-public/</url>
+        </repository>
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
