@@ -1,0 +1,6 @@
+name: ShearingBrillianceFix
+main: com.carter4242.shear.ShearPlugin
+version: 1.0.0
+api-version: 1.20
+author: Carter4242
+description: Adds a work around for the bug in recent versions of Paper where you couldn't get the Shearing Brillance Advancement
