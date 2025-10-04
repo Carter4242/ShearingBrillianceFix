@@ -1,0 +1,31 @@
+name: Build ShearingBrillianceFix
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 21
+        uses: actions/setup-java@v4
+        with:
+          distribution: "temurin"
+          java-version: "21"
+
+      - name: Build with Maven
+        run: mvn -B package --file pom.xml
+
+      - name: Upload jar artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: shearing-brilliance-fix-jar
+          path: ${{ github.workspace }}/target/shearing-brilliance-fix-*.jar
+          if-no-files-found: error
