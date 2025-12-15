@@ -45,6 +45,10 @@ public class ShearListener implements Listener {
         ItemStack bodyItem = equip.getItem(EquipmentSlot.BODY);
         if (bodyItem == null || bodyItem.getType() != Material.WOLF_ARMOR) return;
 
+        // Is the player the owner?
+        Wolf wolf = (Wolf) clicked;
+        if (wolf.getOwner() == null || !wolf.getOwner().getUniqueId().equals(player.getUniqueId())) return;
+
         // All checks passed — grant advancement if not already completed
         if (ShearPlugin.ADV != null) {
             AdvancementProgress progress = player.getAdvancementProgress(ShearPlugin.ADV);
